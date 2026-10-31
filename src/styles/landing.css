@@ -1,0 +1,47 @@
+@import "@fontsource-variable/manrope";
+
+.landing-scene {
+  --landing-gold: #f7ce78;
+  --landing-ink: #fff8df;
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: #071b31;
+  color: var(--landing-ink);
+  font-family: "Manrope Variable", system-ui, sans-serif;
+}
+.landing-scene *, .landing-scene *::before, .landing-scene *::after { box-sizing: border-box; }
+.landing-vignette { position:absolute; inset:0; z-index:2; pointer-events:none; background: radial-gradient(circle at 50% 40%, transparent 20%, rgba(1,11,22,.08) 54%, rgba(0,8,19,.56) 100%), linear-gradient(180deg, rgba(2,15,31,.2), transparent 30%, rgba(0,8,18,.18)); }
+.landing-content { position:relative; z-index:5; display:grid; grid-template-rows:auto 1fr auto; min-height:100svh; padding:clamp(18px,2.2vw,34px) clamp(18px,4vw,68px) clamp(18px,2.8vw,40px); pointer-events:none; }
+.landing-title { justify-self:center; text-align:center; text-transform:uppercase; text-shadow:0 4px 22px #00152dcc; }
+.landing-title h1 { margin:0; color:var(--landing-gold); font-family:Georgia,"Times New Roman",serif; font-size:clamp(34px,5.6vw,76px); line-height:.96; letter-spacing:.035em; font-weight:800; }
+.landing-title p { margin:8px 0 0; color:#fff9ea; font-family:Georgia,"Times New Roman",serif; font-size:clamp(13px,1.8vw,25px); letter-spacing:.28em; }
+.landing-title::after { content:""; display:block; width:min(410px,62vw); height:1px; margin:11px auto 0; background:linear-gradient(90deg,transparent,#f8d98b,transparent); }
+.landing-actions { align-self:end; justify-self:center; display:grid; gap:15px; justify-items:center; width:min(860px,94vw); pointer-events:auto; }
+.landing-main-cta { min-width:min(440px,88vw); min-height:72px; padding:16px 42px; border:1px solid #ffd981; border-radius:12px; background:linear-gradient(180deg,#513817,#211406); color:#fff3ce; box-shadow:inset 0 0 0 3px #9a6928,0 10px 34px #0009,0 0 26px #f2bd4b30; font-family:Georgia,"Times New Roman",serif; font-size:clamp(22px,2.2vw,34px); font-weight:700; letter-spacing:.04em; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+.landing-main-cta:hover { transform:translateY(-2px); box-shadow:inset 0 0 0 3px #ab762f,0 13px 38px #000a,0 0 34px #f5c75c50; filter:brightness(1.07); }
+.landing-main-cta:focus-visible,.landing-nav button:focus-visible,.resume-voyage:focus-visible { outline:3px solid #fff1b8; outline-offset:3px; }
+.landing-nav { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:9px 0; padding:8px 14px; border-radius:12px; background:rgba(1,13,26,.6); backdrop-filter:blur(8px); box-shadow:0 7px 24px #0005; }
+.landing-nav button { display:inline-flex; align-items:center; gap:8px; padding:8px 24px; border:0; border-right:1px solid #c9b57555; background:transparent; color:#f4ead2; font:600 13px/1.2 "Manrope Variable",sans-serif; cursor:pointer; }
+.landing-nav button:last-child { border-right:0; }
+.landing-nav svg { width:17px; height:17px; color:#f0cc73; }
+.resume-voyage { min-height:36px; padding:8px 15px; border:1px solid #f0cc7370; border-radius:999px; background:#061a2dcf; color:#fff2c9; cursor:pointer; }
+.landing-footer { position:absolute; z-index:6; right:24px; bottom:16px; color:#dacb9d; font-size:9px; letter-spacing:.18em; opacity:.75; }
+
+.ocean-scene { position:absolute; inset:0; z-index:0; overflow:hidden; background:#071b31; }
+.ocean-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; background:#071b31; }
+.ocean-video-shade { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg,rgba(2,12,27,.34) 0%,rgba(2,12,27,.06) 36%,rgba(1,9,20,.24) 68%,rgba(1,8,18,.58) 100%); }
+@media (max-width:760px) {
+  .landing-content { padding:16px 12px 18px; }
+  .landing-title h1 { font-size:clamp(28px,10vw,45px); }
+  .landing-title p { letter-spacing:.16em; }
+  .landing-actions { gap:10px; }
+  .landing-main-cta { min-height:58px; font-size:22px; }
+  .landing-nav { width:96vw; }
+  .landing-nav button { flex:1 1 30%; justify-content:center; padding:7px 8px; font-size:10px; border-right:0; }
+  .landing-footer { display:none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-scene * { animation:none !important; transition:none !important; }
+}
